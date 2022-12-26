@@ -1,0 +1,5 @@
+conda create --name fedrank python=3.8
+
+conda activate fedrank
+
+pip install torchvision

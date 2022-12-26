@@ -6,6 +6,8 @@ from torch.utils.data import DataLoader
 from models.cnn import CNN
 from torch import nn
 
+import os
+
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -39,7 +41,7 @@ print(model)
 loss_fn = nn.CrossEntropyLoss()
 optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate)
 
-
+# averaged is a list, where each item represents parameters of a layer
 def average_model(coeflist):
     averaged = []
     Nslaves = len(coeflist)
@@ -50,27 +52,38 @@ def average_model(coeflist):
             if torch.any(torch.isnan(coeflist[j][idx])):
                 print (f'nan found in slave {j} layer {idx}\n')
             layer_param = layer_param + coeflist[j][idx]
+            # print('layer_param shape is', coeflist[j][idx].shape)
         averaged.append(layer_param/Nslaves)
     return averaged
 
-
+# set coefs to model
 def setcoefs(model, coefs):
     idx = 0
     for param in model.parameters():
         d = coefs[idx]
         with torch.no_grad():
-            param.copy_(d)
+            param.copy_(d)  # copy d to param
         idx += 1
 
 def savecoeflist (coeflist, filename):
     flattened = torch.tensor([j for x in coeflist for j in list(torch.flatten(x))])
-    with open(filename, 'wb') as f:
+
+    root = os.getcwd()    
+    # print('root is', root)
+    file_path =  os.path.join(root, 'new_history', filename)
+    # print('file_path',file_path)
+    with open(file_path, 'wb') as f:
         pickle.dump(flattened, f)
         f.close()
+
+    # with open(filename, 'wb') as f:
+    #     pickle.dump(flattened, f)
+    #     f.close()
 
 def clonecoefs(model):
     lst = []
     for param in model.parameters():
+        # print('clone param shape is',param.shape)
         with torch.no_grad():
             lst.append(param.clone())
     return lst
@@ -103,6 +116,9 @@ def client_action(dataloader, test_dataloader, model, loss_fn, optimizer, round,
         train_epoch(dataloader, model, loss_fn, optimizer)
         print(f'Trained Epoch {t}')
         update = [(x-y).cpu()/learning_rate  for x,y in zip(clonecoefs(model), prev_model)]
+
+        
+
         savecoeflist(update, f'history_{round}_{slaves}_{t}.pyc')
     testloss, correct =  test_loop(test_dataloader, model, loss_fn)
     return testloss, correct
@@ -116,7 +132,7 @@ def comm_round(dataloader, test_dataloader, model, loss_fn, optimizer, averagedc
     correct_list = []
 
     for slaves in range(Nslaves):
-        setcoefs(model, averagedcoefs)
+        setcoefs(model, averagedcoefs)  # set averagedcoefs to model
         testloss, correct = client_action(dataloader, test_dataloader, model, loss_fn, optimizer, round, slaves)
         clientcoeflist.append(clonecoefs(model))
         testloss_list.append(testloss)
