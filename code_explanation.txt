@@ -194,35 +194,7 @@ clone param shape is torch.Size([10, 500])
 clone param shape is torch.Size([10])
 root is C:\Users\xxie43\xianjian\Xie_github\fedrank
 file_path C:\Users\xxie43\xianjian\Xie_github\fedrank\new_history\history_0_2_2.pyc
-Traceback (most recent call last):
-  File "main.py", line 172, in <module>
-    averagedcoefs = comm_round(train_dataloader, test_dataloader, model, loss_fn, optimizer, averagedcoefs, jj)
-  File "main.py", line 136, in comm_round
-    testloss, correct = client_action(dataloader, test_dataloader, model, loss_fn, optimizer, round, slaves)
-  File "main.py", line 123, in client_action
-    testloss, correct =  test_loop(test_dataloader, model, loss_fn)
-  File "main.py", line 157, in test_loop
-    for X, y in dataloader:
-  File "C:\Users\xxie43\Anaconda3\envs\fedrank\lib\site-packages\torch\utils\data\dataloader.py", line 628, in __next__
-    data = self._next_data()
-  File "C:\Users\xxie43\Anaconda3\envs\fedrank\lib\site-packages\torch\utils\data\dataloader.py", line 671, in _next_data
-    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
-  File "C:\Users\xxie43\Anaconda3\envs\fedrank\lib\site-packages\torch\utils\data\_utils\fetch.py", line 58, in fetch
-    data = [self.dataset[idx] for idx in possibly_batched_index]
-  File "C:\Users\xxie43\Anaconda3\envs\fedrank\lib\site-packages\torch\utils\data\_utils\fetch.py", line 58, in <listcomp>
-    data = [self.dataset[idx] for idx in possibly_batched_index]
-  File "C:\Users\xxie43\Anaconda3\envs\fedrank\lib\site-packages\torchvision\datasets\mnist.py", line 142, in __getitem__
-    img = Image.fromarray(img.numpy(), mode="L")
-  File "C:\Users\xxie43\Anaconda3\envs\fedrank\lib\site-packages\PIL\Image.py", line 3013, in fromarray
-    return frombuffer(mode, size, obj, "raw", rawmode, 0, 1)
-  File "C:\Users\xxie43\Anaconda3\envs\fedrank\lib\site-packages\PIL\Image.py", line 2931, in frombuffer
-    im = new(mode, (1, 1))
-  File "C:\Users\xxie43\Anaconda3\envs\fedrank\lib\site-packages\PIL\Image.py", line 2825, in new
-    _check_size(size)
-  File "C:\Users\xxie43\Anaconda3\envs\fedrank\lib\site-packages\PIL\Image.py", line 2803, in _check_size
-    if size[0] < 0 or size[1] < 0:
-KeyboardInterrupt
-^C
+
 (fedrank) C:\Users\xxie43\xianjian\Xie_github\fedrank>python main.py
 CNN(
   (conv1): Conv2d(1, 20, kernel_size=(5, 5), stride=(1, 1))
@@ -925,3 +897,16 @@ clone param shape is torch.Size([10, 500])
 clone param shape is torch.Size([10])
 Test Error:
  Accuracy: 24.8% (1.1%), Loss: 228.332825 (0.014214)
+
+
+
+
+
+
+
+
+
+training data is ['__add__', '__class__', '__class_getitem__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__slots__', '__str__', '__subclasshook__', '__weakref__', '_check_exists', '_check_legacy_exist', '_format_transform_repr', '_is_protocol', '_load_data', '_load_legacy_data', '_repr_indent', 'class_to_idx', 'classes', 'data', 'download', 'extra_repr', 'mirrors', 'processed_folder', 'raw_folder', 'resources', 'root', 'target_transform', 
+'targets', 'test_data', 'test_file', 'test_labels', 'train', 'train_data', 'train_labels', 'training_file', 'transform', 'transforms']
+test data is ['__add__', '__class__', '__class_getitem__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__len__', '__lt__', '__module__', '__ne__', '__new__', '__orig_bases__', '__parameters__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__slots__', '__str__', '__subclasshook__', '__weakref__', '_check_exists', '_check_legacy_exist', '_format_transform_repr', '_is_protocol', '_load_data', '_load_legacy_data', '_repr_indent', 'class_to_idx', 'classes', 'data', 'download', 'extra_repr', 'mirrors', 'processed_folder', 'raw_folder', 'resources', 'root', 'target_transform', 
+'targets', 'test_data', 'test_file', 'test_labels', 'train', 'train_data', 'train_labels', 'training_file', 'transform', 'transforms']

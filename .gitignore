@@ -128,5 +128,6 @@ output/
 tmp/
 res/
 histories/
+new_history/
 
 .idea/
