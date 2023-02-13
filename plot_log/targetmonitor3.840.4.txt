@@ -1,0 +1,70 @@
+Test Epoch: 0(100%)  Loss: 1.8124  Accuracy: 12.5
+Test Epoch: 1(100%)  Loss: 1.8124  Accuracy: 20.625999450683594
+Test Epoch: 2(100%)  Loss: 1.8124  Accuracy: 28.235998153686523
+Test Epoch: 3(100%)  Loss: 1.8124  Accuracy: 39.948001861572266
+Test Epoch: 4(100%)  Loss: 1.8124  Accuracy: 54.03000259399414
+Test Epoch: 5(100%)  Loss: 1.8124  Accuracy: 63.41000747680664
+attacker found, idx: 4, time: 7
+runlength list is: [7]
+Test Epoch: 6(100%)  Loss: 1.8124  Accuracy: 66.4280014038086
+Test Epoch: 7(100%)  Loss: 1.8124  Accuracy: 66.95600128173828
+Test Epoch: 8(100%)  Loss: 1.8124  Accuracy: 66.97999572753906
+Test Epoch: 9(100%)  Loss: 1.8124  Accuracy: 67.32799530029297
+Test Epoch: 10(100%)  Loss: 1.8124  Accuracy: 71.36200714111328
+Test Epoch: 11(100%)  Loss: 1.8124  Accuracy: 75.11600494384766
+attacker found, idx: 3, time: 6
+runlength list is: [7, 6]
+Test Epoch: 12(100%)  Loss: 1.8124  Accuracy: 78.38200378417969
+Test Epoch: 13(100%)  Loss: 1.8124  Accuracy: 80.37999725341797
+Test Epoch: 14(100%)  Loss: 1.8124  Accuracy: 82.19200134277344
+Test Epoch: 15(100%)  Loss: 1.8124  Accuracy: 83.45999908447266
+Test Epoch: 16(100%)  Loss: 1.8124  Accuracy: 84.7459945678711
+attacker found, idx: 0, time: 5
+runlength list is: [7, 6, 5]
+Test Epoch: 17(100%)  Loss: 1.8124  Accuracy: 85.54800415039062
+Test Epoch: 18(100%)  Loss: 1.8124  Accuracy: 86.27799987792969
+Test Epoch: 19(100%)  Loss: 1.8124  Accuracy: 86.64600372314453
+Test Epoch: 20(100%)  Loss: 1.8124  Accuracy: 86.97000885009766
+Test Epoch: 21(100%)  Loss: 1.8124  Accuracy: 87.67000579833984
+Test Epoch: 22(100%)  Loss: 1.8124  Accuracy: 87.60800170898438
+attacker found, idx: 0, time: 6
+runlength list is: [7, 6, 5, 6]
+Test Epoch: 23(100%)  Loss: 1.8124  Accuracy: 88.30000305175781
+Test Epoch: 24(100%)  Loss: 1.8124  Accuracy: 88.25199890136719
+Test Epoch: 25(100%)  Loss: 1.8124  Accuracy: 88.23200225830078
+Test Epoch: 26(100%)  Loss: 1.8124  Accuracy: 88.67000579833984
+Test Epoch: 27(100%)  Loss: 1.8124  Accuracy: 88.552001953125
+attacker found, idx: 0, time: 5
+runlength list is: [7, 6, 5, 6, 5]
+Test Epoch: 28(100%)  Loss: 1.8124  Accuracy: 88.94400787353516
+Test Epoch: 29(100%)  Loss: 1.8124  Accuracy: 88.3759994506836
+Test Epoch: 30(100%)  Loss: 1.8124  Accuracy: 88.52999877929688
+Test Epoch: 31(100%)  Loss: 1.8124  Accuracy: 88.66600036621094
+Test Epoch: 32(100%)  Loss: 1.8124  Accuracy: 88.43399810791016
+Test Epoch: 33(100%)  Loss: 1.8124  Accuracy: 88.64199829101562
+attacker found, idx: 0, time: 6
+runlength list is: [7, 6, 5, 6, 5, 6]
+Test Epoch: 34(100%)  Loss: 1.8124  Accuracy: 88.68999481201172
+Test Epoch: 35(100%)  Loss: 1.8124  Accuracy: 88.95799255371094
+Test Epoch: 36(100%)  Loss: 1.8124  Accuracy: 88.36399841308594
+Test Epoch: 37(100%)  Loss: 1.8124  Accuracy: 88.0219955444336
+attacker found, idx: 0, time: 4
+runlength list is: [7, 6, 5, 6, 5, 6, 4]
+Test Epoch: 38(100%)  Loss: 1.8124  Accuracy: 88.8800048828125
+Test Epoch: 39(100%)  Loss: 1.8124  Accuracy: 87.93999481201172
+Test Epoch: 40(100%)  Loss: 1.8124  Accuracy: 87.99398803710938
+attacker found, idx: 0, time: 3
+runlength list is: [7, 6, 5, 6, 5, 6, 4, 3]
+Test Epoch: 41(100%)  Loss: 1.8124  Accuracy: 88.26600646972656
+Test Epoch: 42(100%)  Loss: 1.8124  Accuracy: 87.39799499511719
+Test Epoch: 43(100%)  Loss: 1.8124  Accuracy: 87.46800231933594
+Test Epoch: 44(100%)  Loss: 1.8124  Accuracy: 87.1760025024414
+Test Epoch: 45(100%)  Loss: 1.8124  Accuracy: 86.65800476074219
+attacker found, idx: 0, time: 5
+runlength list is: [7, 6, 5, 6, 5, 6, 4, 3, 5]
+Test Epoch: 46(100%)  Loss: 1.8124  Accuracy: 86.65400695800781
+Test Epoch: 47(100%)  Loss: 1.8124  Accuracy: 86.53400421142578
+Test Epoch: 48(100%)  Loss: 1.8124  Accuracy: 86.68799591064453
+attacker found, idx: 0, time: 3
+runlength list is: [7, 6, 5, 6, 5, 6, 4, 3, 5, 3]
+Test Epoch: 49(100%)  Loss: 1.8124  Accuracy: 87.18800354003906

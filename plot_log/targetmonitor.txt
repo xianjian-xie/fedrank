@@ -1,0 +1,42 @@
+Test Epoch: 0(100%)  Loss: 1.8124  Accuracy: 12.528000831604004
+num detect 0
+Test Epoch: 1(100%)  Loss: 1.8124  Accuracy: 20.690000534057617
+num detect 0
+Test Epoch: 2(100%)  Loss: 1.8124  Accuracy: 28.852001190185547
+num detect 0
+Test Epoch: 3(100%)  Loss: 1.8124  Accuracy: 40.63199996948242
+num detect 0
+Test Epoch: 0(100%)  Loss: 1.8124  Accuracy: 12.512001037597656
+num detect 0
+Test Epoch: 1(100%)  Loss: 1.8124  Accuracy: 21.104001998901367
+num detect 0
+Test Epoch: 2(100%)  Loss: 1.8124  Accuracy: 27.967998504638672
+num detect 0
+Test Epoch: 3(100%)  Loss: 1.8124  Accuracy: 38.220001220703125
+num detect 0
+Test Epoch: 4(100%)  Loss: 1.8124  Accuracy: 51.51799774169922
+num detect 0
+Test Epoch: 0(100%)  Loss: 1.8124  Accuracy: 12.510000228881836
+num detect 0
+Test Epoch: 1(100%)  Loss: 1.8124  Accuracy: 20.917999267578125
+num detect 0
+Test Epoch: 2(100%)  Loss: 1.8124  Accuracy: 28.106000900268555
+num detect 0
+Test Epoch: 3(100%)  Loss: 1.8124  Accuracy: 38.340003967285156
+num detect 0
+Test Epoch: 4(100%)  Loss: 1.8124  Accuracy: 52.77000045776367
+num detect 0
+Test Epoch: 5(100%)  Loss: 1.8124  Accuracy: 61.448001861572266
+num detect 0
+Test Epoch: 0(100%)  Loss: 1.8124  Accuracy: 12.476000785827637
+num detect 0
+Test Epoch: 1(100%)  Loss: 1.8124  Accuracy: 21.124000549316406
+num detect 0
+Test Epoch: 2(100%)  Loss: 1.8124  Accuracy: 28.82600212097168
+num detect 0
+Test Epoch: 3(100%)  Loss: 1.8124  Accuracy: 39.93400192260742
+num detect 0
+Test Epoch: 4(100%)  Loss: 1.8124  Accuracy: 53.6400032043457
+num detect 0
+Test Epoch: 5(100%)  Loss: 1.8124  Accuracy: 62.6619987487793
+num detect 0

@@ -136,10 +136,14 @@ def add_noise_to_model(model, mean, std):
     # print('ratio is', ratio)
     # print('model is',type(model),model)
     noisy_model = copy.deepcopy(model)
-    for k, v in noisy_model.items():
-        noise = np.random.normal(mean, std, noisy_model[k].shape)
-        noisy_model[k] = (noisy_model[k]/torch.max(noisy_model[k]) + noise) * torch.max(noisy_model[k])
-        # noisy_model.state_dict()[k] = noisy_model.state_dict()[k] + torch.randn(noisy_model.state_dict()[k].size()) * std + mean
+    for i in range(len(noisy_model)):
+        noise = torch.randn(noisy_model[i].size()) * std + mean
+        noisy_model[i] = noisy_model[i] + noise
+
+    # for k, v in noisy_model.items():
+    #     noise = np.random.normal(mean, std, noisy_model[k].shape)
+    #     noisy_model[k] = (noisy_model[k]/torch.max(noisy_model[k]) + noise) * torch.max(noisy_model[k])
+    #     # noisy_model.state_dict()[k] = noisy_model.state_dict()[k] + torch.randn(noisy_model.state_dict()[k].size()) * std + mean
     return noisy_model
     #      return tensor + torch.randn(tensor.size()) * self.std + self.mean
     #     noisy_model.state_dict()[k] = 

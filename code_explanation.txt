@@ -901,7 +901,15 @@ Test Error:
 
 
 
-
+# list ->
+# model list[0] shape is torch.Size([20, 1, 5, 5])
+# model list[1] shape is torch.Size([20])
+# model list[2] shape is torch.Size([50, 20, 5, 5])
+# model list[3] shape is torch.Size([50])
+# model list[4] shape is torch.Size([500, 800])
+# model list[5] shape is torch.Size([500])
+# model list[6] shape is torch.Size([10, 500])
+# model list[7] shape is torch.Size([10])
 
 
 

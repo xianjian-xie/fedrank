@@ -20,6 +20,8 @@ class CNN(nn.Module):
     #     x = self.fc2(x)
     #     return F.log_softmax(x)
     #
+
+    # nc=1,fs=4*4*50
     def __init__(self, nc, fs, nclasses=10):
         super(CNN, self).__init__()
         self.conv1 = nn.Conv2d(nc, 20, 5, 1)
