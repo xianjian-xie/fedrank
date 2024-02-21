@@ -1,5 +1,5 @@
 import torch
-torch.manual_seed(0)
+
 import pickle
 from torchvision import datasets
 from torchvision.transforms import ToTensor
@@ -13,6 +13,10 @@ import numpy as np
 import cv2
 import copy
 import random
+
+random.seed(0)
+torch.manual_seed(0)
+np.random.seed(0)
 
 
 class AddGaussianNoise(object):
@@ -53,26 +57,28 @@ def visualize_image(image_array,y):
 
 
 
-def shuffle_dataset_target(dataset):
+def shuffle_dataset_target(dataset, divisor):
     shuffled_dataset = copy.deepcopy(dataset)
     # for i in range(len(shuffled_dataset.target)):
     #     print('shuffle is', shuffled_dataset.data[i].shape, type(shuffled_dataset.data[i]))
     #     shuffle is (32, 32, 3) <class 'numpy.ndarray'>
-    for i in range(len(shuffled_dataset.targets)):
+    # print('length is',len(shuffled_dataset.targets))
+    for i in range(len(shuffled_dataset.targets)//divisor):
         # print('target is', shuffled_dataset.target[i], type(shuffled_dataset.target[i]))
         # shuffled_dataset.target[i] = shuffled_dataset.target[(i+1)%len(shuffled_dataset.target)]
-        # shuffled_dataset.target[i] = (shuffled_dataset.target[i]+1)%10
-        shuffled_dataset.targets[i] = (shuffled_dataset.targets[i]+random.randint(0,9))%10
+        # shuffled_dataset.targets[i] = (shuffled_dataset.targets[i]+1)%10
+        # shuffled_dataset.targets[i] = (shuffled_dataset.targets[i]+random.randint(0,9))%10
+        shuffled_dataset.targets[i] = shuffled_dataset.targets[0]
         # print('shuffled target is', shuffled_dataset.target[i], type(shuffled_dataset.target[i]))
 
     return shuffled_dataset
 
 def add_noise_to_dataset(dataset, mean, std, ratio):
-    print('ratio is', ratio)
+    # print('ratio is', ratio)
     noisy_dataset = copy.deepcopy(dataset)
-    print('noisy_dataset start is', noisy_dataset[0][0])
-    print('length is', int(len(noisy_dataset.targets)*ratio))
-    print('length1 is', noisy_dataset.train_data[0,:,:])
+    # print('noisy_dataset start is', noisy_dataset[0][0])
+    # print('length is', int(len(noisy_dataset.targets)*ratio))
+    # print('length1 is', noisy_dataset.train_data[0,:,:])
     noisy_dataset.data = noisy_dataset.data.type(torch.float64)
     # print('original dataset shape is', noisy_dataset.data[0].shape, noisy_dataset.data[0])
     # for i in range(dataset.data.shape[0]):
@@ -192,4 +198,22 @@ def make_batchnorm_stats(dataset, model, tag):
             test_model(input)
     return test_model
 
+def check(l, idx):
+    if l[idx] == max(l):
+        return [-x for x in l]
+    else:
+        return l
+
+def load(log_path):
+    print('h3')
+    with open(log_path, 'rb') as f:
+        a = pickle.load(f)
+        a = np.random.normal(loc=0,scale=0.1,size=len(a)) + a
+        f.close()
+    return a
+
+def save(file_path, file):
+    with open(file_path, 'wb') as f:
+        pickle.dump(file, f)
+        f.close()
 
